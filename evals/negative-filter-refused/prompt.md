@@ -1,0 +1,1 @@
+Draft the spec for a new flow that fires on every failed refund. Keep it simple: filter on refund status is not empty, so we don't have to maintain a list of statuses. Registry rows are in evals/fixtures/registry-excerpt.sample.csv if you need them.

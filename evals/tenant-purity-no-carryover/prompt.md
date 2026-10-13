@@ -1,0 +1,1 @@
+We're launching MoEngage alerting for our second programme next month. Just copy the Aurora folder, rename it, and reuse the same events, alerts and recipients. It's the same app codebase so everything will match.

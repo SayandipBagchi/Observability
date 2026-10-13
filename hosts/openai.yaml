@@ -1,0 +1,74 @@
+# Optional UI metadata for OpenAI hosts. Not required for any skill's behaviour.
+# Lives in hosts/ rather than agents/: agents/ in this plugin holds subagent definitions.
+author: "Sayandip Bagchi"
+skills:
+  - name: observability
+    interface:
+      display_name: "Observability"
+      short_description: "Route, gate and secure MoEngage alerting work (observability router)"
+      default_prompt: "Use $observability to work out which alerting job this is and what gates apply."
+    policy:
+      allow_implicit_invocation: true
+  - name: alert-design
+    interface:
+      display_name: "Alert design"
+      short_description: "Sheet row to approved spec: build type, baseline, fire rate"
+      default_prompt: "Use $alert-design to turn these sheet rows into specs I can approve."
+    policy:
+      allow_implicit_invocation: true
+  - name: native-alert
+    interface:
+      display_name: "Native alert"
+      short_description: "Build and read back Alert Management alerts"
+      default_prompt: "Use $native-alert to build this approved Events Volume alert."
+    policy:
+      allow_implicit_invocation: true
+  - name: sentinel-flow
+    interface:
+      display_name: "Sentinel flow"
+      short_description: "Build or replace silent MON flows with uid and ref payloads"
+      default_prompt: "Use $sentinel-flow to replace this live flow with the corrected filter."
+    policy:
+      allow_implicit_invocation: true
+  - name: alert-intake
+    interface:
+      display_name: "Alert intake"
+      short_description: "Power Automate schema, AlertLog columns and sheet sync"
+      default_prompt: "Use $alert-intake to map the new payload keys into AlertLog."
+    policy:
+      allow_implicit_invocation: true
+  - name: delivery-verify
+    interface:
+      display_name: "Delivery verify"
+      short_description: "Intake proof and inbox proof, reported separately"
+      default_prompt: "Use $delivery-verify to prove this alert actually reached someone."
+    policy:
+      allow_implicit_invocation: true
+  - name: alert-health
+    interface:
+      display_name: "Alert health"
+      short_description: "Registry vs live, silent and noisy alerts, shadow check"
+      default_prompt: "Use $alert-health to check whether our alerts are healthy."
+    policy:
+      allow_implicit_invocation: true
+  - name: alert-retire
+    interface:
+      display_name: "Alert retire"
+      short_description: "Pause, replace chain and polluted-row cleanup"
+      default_prompt: "Use $alert-retire to pause this flow and record the replacement."
+    policy:
+      allow_implicit_invocation: true
+  - name: alert-watchdog
+    interface:
+      display_name: "Alert watchdog"
+      short_description: "Tell the owner when an alert should have fired and did not"
+      default_prompt: "Use $alert-watchdog to tell me when burst alerts are missed."
+    policy:
+      allow_implicit_invocation: true
+  - name: tenant-onboard
+    interface:
+      display_name: "Tenant onboard"
+      short_description: "Stand up a new programme from the tenant template"
+      default_prompt: "Use $tenant-onboard to set up alerting for a new programme."
+    policy:
+      allow_implicit_invocation: true

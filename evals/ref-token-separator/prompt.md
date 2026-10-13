@@ -1,0 +1,1 @@
+AlertLog shows Uid filled but Ref blank for the new stall flow, every row since go-live. The connector body has "ref": "{{EventAttribute['MOE_TRIGGER_EVENT.application-status.application_ref']}}". The attribute definitely exists. What's wrong and how do I fix it?

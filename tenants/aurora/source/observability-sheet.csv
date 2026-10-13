@@ -1,0 +1,15 @@
+ID,Module,KPI,Events (in order),Logic for trigger,Content for alert (email),Sev,Mechanism,Cadence,Baseline (30d avg to last-seen date),Your edit / threshold,Comments
+LGN-01,Login,Sign-in code not verified,ac_code_sent then ac_code_verified,Code sent and not verified within 10 min,"Alert ID, journey, count, window",P2,MON flow,10 min,3.8/d (0–11),,invented demo row
+SGN-01,Sign-up,Sign-ups per day drop,ac_signup_started,Volume down > 40% vs previous 7 days,"Count, change %, window",P2,Native – Events Volume,Daily,63/d (41–88),,invented demo row
+SGN-02,Sign-up,Started not submitted,ac_signup_started then ac_signup_submitted,Started and not submitted within 45 min,"Alert ID, count, window",P3,MON flow,45 min,9.1/d (3–17),,invented demo row
+SGN-03,Sign-up,Duplicate application,device and email hash,Same device and email hash on two applications,"Count, window",P3,Warehouse,Daily,,,needs a warehouse join
+SGN-04,Sign-up,Approval rate,ac_application_status,Approval rate < 65% in last Day,"Rate, window",P2,MON flow,Daily,58% (49–67%),<65% signed off,<65% would fire daily (baseline 58%)
+KYC-01,KYC,ID check failed,ac_idcheck_failed,Every failure with a listed reason,"Alert ID, reason, ref",P1,MON flow,every event,5.4/d (1–12),,invented demo row
+KYC-02,KYC,ID check vendor timeout,ac_idcheck_started,Vendor timeout rate,"Rate, window",P2,Native – Events Volume,Daily,,,not proposed yet
+KYC-03,KYC,ID check started not finished,ac_idcheck_started then ac_idcheck_passed,Started and not passed within 30 min,"Alert ID, ref",P2,MON flow,30 min,2.2/d (0–7),,invented demo row
+KYC-04,KYC,Manual review backlog,review queue,Queue older than 1 day,Queue size,P3,Warehouse,Daily,,,out of MoEngage
+KYC-05,Card,Approved not shipped,ac_application_status then ac_card_shipped,Approved and not shipped within 2 days,"Alert ID, ref",P2,MON flow,2 d,0.4/d (0–2),,invented demo row
+AUT-01,Authorisations,Authorisations per day drop,ac_auth_result,< 120 in last Day,"Count, window",P1,Native – Events Volume,Daily,410/d (260–590),,invented demo row
+AUT-02,Authorisations,Decline with system fault,ac_auth_result,Decline code AC_SYSTEM_FAULT,"Alert ID, ref",P1,MON flow,every event,1.3/d (0–5),,invented demo row
+PAY-02,Payments,Payment started not settled,ac_payment_started then ac_payment_settled,Started and not settled within 3 h,"Alert ID, ref",P2,MON flow,3 h,1.9/d (0–6),,invented demo row
+STM-01,Statements,Statement not opened,ac_statement_ready then ac_statement_opened,Ready and not opened within 5 days,"Alert ID, count",P3,MON flow,5 d,22/d (9–40),,invented demo row

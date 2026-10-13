@@ -1,0 +1,1 @@
+Two new alerts for the programme: (a) tell us if daily sign-ups drop more than 40% against last week; (b) tell us when a customer starts setting a card PIN but hasn't finished within 20 minutes. Which build type is each, and why?

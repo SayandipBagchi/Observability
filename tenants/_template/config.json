@@ -1,0 +1,56 @@
+{
+  "tenant": "<name>",
+  "moengage": {
+    "host": "dashboard-0X.moengage.com",
+    "workspaceHeader": "<header name>",
+    "workspaceEmailLabel": "<name shown in alert emails>",
+    "environment": "Live",
+    "otherWorkspacesSeen": []
+  },
+  "recipients": [],
+  "nativeAlertChannels": [
+    "Email"
+  ],
+  "teamsChannel": "",
+  "intake": {
+    "name": "<intake name>",
+    "owner": "<owner>",
+    "urlStoredHere": false,
+    "stampsReceipt": "<receipt column>",
+    "log": "<where the AlertLog lives>"
+  },
+  "connectorBodyKeys": [
+    "alertId",
+    "journey"
+  ],
+  "uidResolvesTo": "<unknown until the first intake row: length and format only>",
+  "refTable": "ref-table.md",
+  "journeys": [],
+  "vocabulary": {
+    "onboardingEvent": "",
+    "statusAttribute": "",
+    "otpSmsFilter": "Alert Name",
+    "otpSmsAlertNames": []
+  },
+  "eventNames": [],
+  "purity": {
+    "terms": [],
+    "note": "Strings unique to this tenant that must never appear in generic files. eventNames and vocabulary values are banned too."
+  },
+  "acquisitionPaused": {
+    "value": false,
+    "since": null
+  },
+  "flowLog": "",
+  "buildLog": "build_log.csv",
+  "sourceSheet": "source/<sheet>.csv",
+  "watchdog": {
+    "recipients": [],
+    "timezone": "<IANA or Windows time zone for slot tests>",
+    "cadenceMinutes": 30,
+    "dailySlot": "<HH:mm local, one run a day>",
+    "flowName": "",
+    "flowId": "",
+    "status": "not_built"
+  }
+}

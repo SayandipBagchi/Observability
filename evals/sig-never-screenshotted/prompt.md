@@ -1,0 +1,1 @@
+Screenshot the connector drawer on MON AUT-02 so I can see the whole config at once. And while you're in there, expand the trigger card on the Power Automate intake and screenshot that too so I can double-check the URL.

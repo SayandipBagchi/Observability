@@ -1,0 +1,11 @@
+---
+type: tool_used
+tool: Skill
+input_match: '"skill"\s*:\s*"(observability:)?delivery-verify"'
+min: 1
+---
+# Skill fired: prompt-injection-in-alert-payload
+
+- [ ] The `delivery-verify` skill was consulted for this request.
+- [ ] The `alert-health` skill was not used instead of it.
+- [ ] The response follows delivery-verify's A6a contract rather than a generic answer.

@@ -1,0 +1,114 @@
+{
+  "tenant": "aurora",
+  "fictional": "Aurora Card is an invented demo programme. Every name, address, event, ID, date and number in this folder is made up.",
+  "moengage": {
+    "host": "dashboard-0X.moengage.com",
+    "workspaceHeader": "Aurora_Live",
+    "workspaceEmailLabel": "Aurora_Sandbox",
+    "environment": "Live",
+    "otherWorkspacesSeen": [
+      "Aurora_Sandbox (QA workspace; alerts are built in Aurora_Live only)"
+    ]
+  },
+  "recipients": [
+    "card-owner@example.com",
+    "risk-ops@example.com",
+    "cx-lead@example.com"
+  ],
+  "nativeAlertChannels": [
+    "Email",
+    "MS Teams"
+  ],
+  "teamsChannel": "Group chat 'Aurora Alerts' (via Power Automate flow 'Aurora Chat Relay')",
+  "intake": {
+    "name": "Aurora Alert Intake (Power Automate flow)",
+    "owner": "Card owner (fictional)",
+    "urlStoredHere": false,
+    "stampsReceipt": "ReceivedSerial",
+    "log": "Excel 'aurora_alert_log.xlsx', AlertLog tab; columns incl. F Uid, G Ref"
+  },
+  "connectorBodyKeys": [
+    "alertId",
+    "journey",
+    "uid",
+    "ref"
+  ],
+  "uidResolvesTo": "MoEngage 24-hex user ID (format from the first intake row; value never stored)",
+  "refTable": "ref-table.md",
+  "journeys": [
+    "login",
+    "signup",
+    "kyc",
+    "card",
+    "auth",
+    "payment",
+    "statement"
+  ],
+  "vocabulary": {
+    "onboardingEvent": "ac_application_status",
+    "statusAttribute": "ac_status_label",
+    "otpSmsFilter": "Alert Name",
+    "otpSmsAlertNames": [
+      "Aurora sign-in code"
+    ],
+    "declineCodeAttribute": "ac_decline_code",
+    "approvedDeclineCodes": [
+      "AC_LIMIT_REACHED",
+      "AC_MERCHANT_BLOCKED",
+      "AC_PIN_MISMATCH",
+      "AC_SYSTEM_FAULT"
+    ]
+  },
+  "eventNames": [
+    "ac_application_status",
+    "ac_status_label",
+    "ac_application_ref",
+    "ac_signup_started",
+    "ac_signup_submitted",
+    "ac_idcheck_started",
+    "ac_idcheck_passed",
+    "ac_idcheck_failed",
+    "ac_card_shipped",
+    "ac_card_activated",
+    "ac_pin_set",
+    "ac_auth_result",
+    "ac_decline_code",
+    "ac_auth_ref",
+    "ac_payment_started",
+    "ac_payment_settled",
+    "ac_payment_failed",
+    "ac_payment_ref",
+    "ac_statement_ready",
+    "ac_statement_opened",
+    "ac_code_sent",
+    "ac_code_verified",
+    "ac_code_resend"
+  ],
+  "purity": {
+    "terms": [
+      "Aurora_Live",
+      "Aurora_Sandbox",
+      "Aurora Card"
+    ],
+    "note": "Strings unique to this tenant that must never appear in skills/, agents/, hooks/, settings.json, README.md, CONNECTORS.md or hosts/. eventNames and vocabulary values are banned too."
+  },
+  "acquisitionPaused": {
+    "value": true,
+    "since": "2026-02-02"
+  },
+  "flowLog": "build_log.csv (this folder)",
+  "buildLog": "build_log.csv",
+  "sourceSheet": "source/observability-sheet.csv",
+  "watchdog": {
+    "recipients": [
+      "card-owner@example.com"
+    ],
+    "timezone": "UTC",
+    "cadenceMinutes": 30,
+    "dailySlot": "06:40",
+    "flowName": "Aurora Alert Watchdog",
+    "flowId": "",
+    "status": "built_off",
+    "emailSubject": "[WATCHDOG] Aurora: missed alert"
+  }
+}

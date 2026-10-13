@@ -1,0 +1,14 @@
+#!/bin/sh
+# Blocks a commit that would leak a private term, a secret or a real email address.
+# Enable once per clone:  git config core.hooksPath .githooks
+set -e
+ROOT="$(git rev-parse --show-toplevel)"
+if git diff --cached --name-only | grep -qx ".private-denylist"; then
+  echo "BLOCKED: .private-denylist is staged. It must never be committed."
+  exit 1
+fi
+python3 "$ROOT/scripts/leak_scan.py" --staged
+python3 "$ROOT/scripts/validate_skill.py" > /dev/null || {
+  echo "BLOCKED: scripts/validate_skill.py failed. Run it for details."
+  exit 1
+}

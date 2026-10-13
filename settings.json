@@ -1,0 +1,86 @@
+{
+  "observability": {
+    "defaultTenant": null,
+    "tenantResolution": "from the request, the workspace header, or by asking; never defaulted",
+    "modelGate": {
+      "askModel": true,
+      "askPlanVsDirect": true,
+      "recommendForBuilds": "Opus"
+    },
+    "requireApprovalBeforeBuild": true,
+    "approvalCovers": [
+      "alert",
+      "threshold_or_wait",
+      "recipients",
+      "payload"
+    ],
+    "readBackAfterSave": true,
+    "liveFlowsAreImmutable": true,
+    "replacementPolicy": "duplicate -> rename (canvas click, breadcrumb) -> fix -> save -> read back -> publish -> pause original -> append to replaced_ids chain",
+    "filters": {
+      "policy": "positive enumeration",
+      "refusedQualifyingOperators": [
+        "is not empty",
+        "!=",
+        "not in",
+        "does not contain",
+        "exists"
+      ]
+    },
+    "flowDefaults": {
+      "controlGroup": "off",
+      "audience": "All users",
+      "customerFacingSteps": 0,
+      "connectorMethod": "POST",
+      "connectorBodyAllowedKeys": [
+        "alertId",
+        "journey",
+        "uid",
+        "ref"
+      ],
+      "connectorBodyKeysFrom": "tenants/<name>/config.json -> connectorBodyKeys",
+      "refTokenSeparator": "U+2024"
+    },
+    "conditionWindow": {
+      "minMinutes": 5,
+      "maxDays": 30
+    },
+    "baseline": "30-day average ending on the last day the event fired",
+    "testAlertPolicy": {
+      "namePrefix": "TEST",
+      "recipients": "author only",
+      "maxLifetimeHours": 24,
+      "deleteAfterVerified": true
+    },
+    "health": {
+      "silentAlertDays": 14,
+      "noisyAlertFiresPerWeek": 5,
+      "maxHoursSinceRegistryVerify": 168,
+      "shadowCheck": {
+        "windowHours": 24,
+        "suspectMultiple": 3
+      }
+    },
+    "session": {
+      "offerNewSessionAfterPrompts": 8,
+      "endWithCapsule": true,
+      "offerSkillEnhancementMd": true
+    },
+    "watchdog": {
+      "recipients": "owner only (tenant config watchdog.recipients)",
+      "cadenceMinutes": 30,
+      "settleMinutes": 10,
+      "layer3": {
+        "dailySlot": "one run per day before the digest",
+        "intakeSilentHours": 24,
+        "quietAlert": {
+          "minRowsIn14Days": 3,
+          "zeroRowsHours": 72
+        }
+      },
+      "builtSwitchedOff": true,
+      "skipTestRows": true,
+      "customerValuesInEmail": false
+    }
+  }
+}

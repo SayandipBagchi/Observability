@@ -1,0 +1,16 @@
+{
+  "description": "Session-start reminder for MoEngage alerting: the ways this goes quietly wrong are an unapproved threshold or payload, a negative filter firing on success, a live flow edited in place, a save that never persisted, an intake row mistaken for an inbox, and the intake signature captured in a screenshot.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[observability] (0) Before live work: ask which model and plan vs direct; recommend Opus for builds. Resolve the tenant; never default one. (1) Nothing is built without the owner approving the alert, threshold or wait, recipients and payload (uid, ref) in this session. (2) Filters are positive enumerations; no is-not-empty or != as the qualifying filter. (3) Confirm the header workspace and env against tenants/<name>/config.json; the email label is not the workspace. (4) Live flows cannot be edited: duplicate, rename, read back, publish, pause the original, keep the full replaced_ids chain. (5) Read back from the saved state: reopen the flow, Code view in Power Automate, the saved copy of a workbook. A toast is not success. (6) Never screenshot a connector drawer or the Power Automate trigger card; slice JS reads from Body type. (7) An intake row proves intake, not inbox. (8) Tenant facts live in tenants/<name>/, never in skills/.'"
+          }
+        ]
+      }
+    ]
+  }
+}

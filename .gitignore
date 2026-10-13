@@ -1,0 +1,18 @@
+# Private: never commit
+.private-denylist
+_private/
+*.zip
+
+# Real tenants stay local; only the template and the fictional example ship
+tenants/*
+!tenants/README.md
+!tenants/_template/
+!tenants/aurora/
+
+evals/results/
+runs/
+__pycache__/
+*.pyc
+*.local.*
+.env
+.DS_Store

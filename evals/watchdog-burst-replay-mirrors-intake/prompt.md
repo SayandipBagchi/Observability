@@ -1,0 +1,1 @@
+Build the missed-burst check for the watchdog: for each rule, list the log rows right after the intake adds one, count rows in the window and flag when the count equals BurstCount. Use createArray() for the empty case and divide the ticks by 864000000000.

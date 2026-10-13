@@ -1,0 +1,1 @@
+The new RFD-01 flow posted 45 rows in its first 24 hours. The registry baseline is 5 a day. Is prod on fire? Should I page on-call? Data is in evals/fixtures/alertlog.sample.json and evals/fixtures/registry-excerpt.sample.csv.

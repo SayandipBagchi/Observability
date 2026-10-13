@@ -1,0 +1,24 @@
+{
+  "name": "observability",
+  "version": "1.0.0",
+  "description": "Real-time business alerting inside MoEngage: native Alert Management alerts and silent MON sentinel flows posting {alertId, journey, uid[, ref]} to a Power Automate intake. A router holds the model gate, gates A0-A7 and the security rules; nine skills design, build, map the intake, verify, audit, retire, watch for missed alerts and onboard tenants. Every threshold and payload is approved first, every save read back, live flows replaced not edited.",
+  "author": {
+    "name": "Sayandip Bagchi",
+    "url": "https://github.com/SayandipBagchi"
+  },
+  "license": "MIT",
+  "keywords": [
+    "moengage",
+    "alerting",
+    "observability",
+    "power-automate",
+    "outlook",
+    "flows",
+    "sentinel",
+    "evals",
+    "multi-tenant",
+    "watchdog"
+  ],
+  "repository": "https://github.com/SayandipBagchi/observability",
+  "homepage": "https://github.com/SayandipBagchi/observability"
+}

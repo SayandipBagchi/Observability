@@ -1,0 +1,8 @@
+alert_id,old_id,new_id,name,ref,readback,published,original_paused
+LGN-01,,000000000000000000a0f101,MON LGN-01 sign-in code not verified 10m,MOE_TRIGGER_EVENT.ac_code_sent.ac_application_ref,ok,yes,
+KYC-01,000000000000000000a0f1b1,000000000000000000a0f301,MON KYC-01 ID check failed v2,MOE_TRIGGER_EVENT.ac_idcheck_failed.ac_application_ref,ok,yes,yes
+PAY-02,000000000000000000a0f1b2,000000000000000000a0f502,MON PAY-02 payment not settled 3h v2,MOE_TRIGGER_EVENT.ac_payment_started.ac_payment_ref,ok,yes,yes
+KYC-05,,000000000000000000a0f305,MON KYC-05 approved not shipped 2d,MOE_TRIGGER_EVENT.ac_application_status.ac_application_ref,ok,yes,
+SGN-02,000000000000000000a0f1a2,000000000000000000a0f202,MON SGN-02 sign-up started not submitted 45m v2,,ok,yes,yes
+AUT-02,,000000000000000000a0f402,MON AUT-02 decline system fault,MOE_TRIGGER_EVENT.ac_auth_result.ac_auth_ref,ok,yes,
+KYC-03,,,MON KYC-03 ID check not finished 30m,MOE_TRIGGER_EVENT.ac_idcheck_started.ac_application_ref,pending,no,
