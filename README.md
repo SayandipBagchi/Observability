@@ -76,7 +76,7 @@ recipients, lives under `tenants/<name>/`.
 ## Install
 
 ```bash
-git clone https://github.com/SayandipBagchi/observability.git
+git clone https://github.com/SayandipBagchi/Observability.git
 ```
 
 Add the cloned folder as a plugin in Claude (or Claude Code). The ten skills and eight agents
