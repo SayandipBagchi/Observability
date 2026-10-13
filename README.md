@@ -117,24 +117,6 @@ root files and declared extras, `hosts/openai.yaml`, and that `commands/` does n
 enumeration on live flows, payload decisions, and that no URL, signature or email address sits in
 any cell.
 
-## Keeping private data out (leak guard)
-
-Real tenant folders are git-ignored; only `tenants/README.md`, `tenants/_template/` and the
-fictional example ship. Two guards stop private material reaching a commit:
-
-1. **`.private-denylist`** (untracked, never committed): one private term per line, such as an
-   employer name, a programme name, a vendor or a real event name. Lines starting with `re:` are
-   regexes. `validate_skill.py` reads it for tenant purity and email domains, so the guard code
-   itself names nothing private.
-2. **`scripts/leak_scan.py`** checks every file (or only staged files with `--staged`) against the
-   denylist, secret and intake-host patterns, non-allowlisted URLs and any email domain other than
-   `example.com`, `example.org` or `example.invalid`. It reports file, line and rule, and never
-   prints the matched text.
-
-Enable the hook once per clone:
-
-```bash
-git config core.hooksPath .githooks
 ```
 
 ## Licence
